@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>:D</title>
 <style> 
 body{
     display: flex;
@@ -90,6 +91,13 @@ body{
     <div id="mensaje">HOLA!</div>
     <div class="puerta2"><span></span></div>
 </div>
-
+<script>
+    window.onblur= function(){
+        document.title = 'No te vayas D:';
+    }
+    window.onfocus = function(){
+        document.title = ':D';
+    }
+</script>
 </body>
 </html>
