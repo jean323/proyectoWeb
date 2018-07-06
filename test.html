@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>:D</title>
+<style> 
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+    #caja{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 2fr;
+        width: 50vh;
+        height: 50vh;
+    }
+    .puerta1,.puerta2{
+        background-color: rgb(122, 55, 55);
+        position: relative;
+        transition: transform 2s;
+        transition-delay: 0s;
+        height: 100%;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+    }
+    span{
+        width: 10px;
+        height: 10px;
+        background-color: rgb(178, 178, 178);
+        border-radius: 100%;
+        position: absolute;
+    }
+    .puerta1{
+        border-left: 2px solid black;
+        transform-origin: left;
+    }
+    .puerta2{
+        transform-origin: right;
+        border-right: 2px solid black;
+    }
+    #caja:hover .puerta1{
+        transform: rotateY(80deg);
+
+    }
+    #caja:hover .puerta2{
+        transform: rotateY(-80deg);
+
+    }
+
+    .puerta1 span{
+        top:calc(25vh - 5px);
+        right: 10px;
+    }
+    .puerta2 span{
+        top:calc(25vh - 5px);
+        left: 10px;
+    }
+    #mensaje{
+        align-self: center;
+        justify-self: center;
+        position: absolute;
+        z-index: -1;
+        background-color: red;
+        height: 100px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        color: yellow;
+        transition: transform 2s, color 2s, background-color 2s,box-shadow 2s, text-shadow 2s;
+        transition-delay: 0s;
+        font-weight: bold;
+        font-family: arial;
+    }
+    #caja:hover #mensaje{
+        transform: rotate(360deg);
+        color: red;
+        background-color: yellow;
+        box-shadow: 0 0 50px rgba(0,0,0,.7);
+        text-shadow: 0px 0px 10px rgba(255,0,0,.7);
+    }
+</style>
+</head>
+<body>
+
+<div id="caja">
+    <div class="puerta1"><span></span></div>
+    <div id="mensaje">HOLA!</div>
+    <div class="puerta2"><span></span></div>
+</div>
+<script>
+    window.onblur= function(){
+        document.title = 'No te vayas D:';
+    }
+    window.onfocus = function(){
+        document.title = ':D';
+    }
+</script>
+</body>
+</html>
